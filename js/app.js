@@ -61,7 +61,7 @@ function clickEvent(event){
             if(BusMall.all[i].nameOfProducts===event.target.title){
                 BusMall.all[i].vote++;
                 BusMall.all[i].views++;
-                consale.table(BusMall.all[i]);
+                // consale.table(BusMall.all[i]);
             }
         }
         render();
