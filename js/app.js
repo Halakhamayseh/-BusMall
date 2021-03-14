@@ -30,7 +30,7 @@ function BusMall(nameOfProducts,imgEx){
   this.imgEx=imgEx;
   this.vote=0;
   this.views=0;
-  this.src=`./img/${nameOfProducts}.${imgEx}`;
+  this.src=`./img/${nameOfProducts}`;
   BusMall.all.push(this);
 }
 BusMall.all=[];
@@ -73,10 +73,10 @@ function randomNumber(min, max){
 }
 randomNumber();
 render();
-const buttonResult=document.getElementById('buttonResult');
-let totalClick=0;
-buttonResult.addEventListener('click',clickButton);
-function clickButton(event){
-    if(totalClick<25){
-        alert ()
-    }
+// const buttonResult=document.getElementById('buttonResult');
+// let totalClick=0;
+// buttonResult.addEventListener('click',clickButton);
+// function clickButton(event){
+//     if(totalClick<25){
+//         alert ()
+//     }
