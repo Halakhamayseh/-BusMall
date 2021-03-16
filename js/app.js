@@ -104,10 +104,23 @@ let buttonResult=document.getElementById('buttonResult');
 buttonResult.addEventListener('click',clickButton);
 let viewsArray=[];
 let clickArray=[];
+//added local storage//
+let BusMallData=JSON.stringify(BusMall.all);
+localStorage.setItem('user data',BusMallData);
+// console.log(BusMallArray);
+function userData(){
+  let newUserData =localStorage.getItem('user data');
+  // console.log(newUserData);
+  return newUserData;
+}
 function clickButton(){
+  let getDataFuncation=userData();
+  getDataFuncation=JSON.parse(getDataFuncation);
+  getDataFuncation=[];
+  //i try to replace the it but it not true//
   for (let j=0;j<BusMall.all.length;j++){
     viewsArray.push(BusMall.all[j].views);
-    // console.log(BusMall.all[j].views);
+    console.log(BusMall.all[j].views);
     clickArray.push(BusMall.all[j].vote);}
   let context=document.getElementById('ChartPar').getContext('2d');
   let parChart=new Chart(context,{
@@ -148,6 +161,6 @@ function clickButton(){
     },
   });
 }
-
 randomNumber();
 render();
+
