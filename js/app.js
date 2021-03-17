@@ -37,6 +37,7 @@ BusMall.all=[];
 for ( let i =0; i<nameOfProducts.length;i++){
   new BusMall (nameOfProducts[i]);
 }
+userData();
 function render (){
   //max,min random and put the data in array(left)//
   let leftProduct= randomNumber(0,BusMall.all.length-1);
@@ -147,7 +148,19 @@ function clickButton(){
       }]
     },
   });
+  localST();
 }
 
 randomNumber();
 render();
+function localST(){
+  let BusMallData=JSON.stringify(BusMall.all);
+  localStorage.setItem('user data',BusMallData);
+
+}
+function userData(){
+  let newUserData =localStorage.getItem('user data');
+  if(newUserData){
+    BusMall.all=JSON.parse(newUserData);
+  }
+}
